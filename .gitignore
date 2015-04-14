@@ -2,5 +2,9 @@
 *.log
 *.synctex.gz
 *.aux
-.DS_store
+*.bbl
+*.blg
+*.dvi
 *.pdf
+
+.DS_store
