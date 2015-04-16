@@ -1,4 +1,4 @@
-\documentclass[11pt]{book}
+\documentclass[11pt,twoside]{book}
 
 \usepackage{geometry}
 \usepackage[parfill]{parskip}
@@ -11,17 +11,22 @@
 
 \begin{document}
 
-\mainmatter
 \maketitle
 \tableofcontents
 
-\include{chapters/chapter1}
-\include{chapters/chapter2}
-\include{chapters/chapter3}
-\include{chapters/chapter4}
-\include{chapters/chapter5}
-\include{chapters/chapter6}
+\frontmatter
+\include{frontmatter/abstract}
+\include{frontmatter/dedication}
 
+\mainmatter
+\include{mainmatter/chapter1}
+\include{mainmatter/chapter2}
+\include{mainmatter/chapter3}
+\include{mainmatter/chapter4}
+\include{mainmatter/chapter5}
+\include{mainmatter/chapter6}
+
+\backmatter
 \bibliographystyle{plain}
 \bibliography{main}
 
