@@ -22,4 +22,5 @@ task :clean do
   sh "rm -f *.aux *.bbl *.blg *.dvi *.log *.pdf *.synctex.gz *.toc"
   sh "rm -f frontmatter/*.aux frontmatter/*.log"
   sh "rm -f mainmatter/*.aux mainmatter/*.log"
+  sh "rm -f appendix/*.aux appendix/*.log"
 end
