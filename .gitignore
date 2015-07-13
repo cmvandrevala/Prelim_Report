@@ -6,5 +6,6 @@
 *.blg
 *.dvi
 *.pdf
+*.lot
 
 .DS_store
