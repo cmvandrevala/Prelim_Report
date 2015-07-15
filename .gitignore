@@ -1,11 +1,13 @@
-*.toc
-*.log
-*.synctex.gz
 *.aux
 *.bbl
 *.blg
-*.dvi
-*.pdf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
 *.lot
+*.pdf
+*.toc
 
 .DS_store
