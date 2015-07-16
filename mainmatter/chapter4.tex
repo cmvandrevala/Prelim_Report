@@ -2,118 +2,40 @@
 
 \section{Background}
 
-Work started on the CITA on CHIP project in earnest in February 2015.
+Work started on the \gls{cita} on gls{chip} project in early 2015. Since then, we have developed interactive homework questions as well as tools that can track and analyze student progress. This parallel development of problems and analysis tools will ensure that we can continuously improve the system over many semesters in a structured way. It also ensures that we can react to change in an efficient manner.
 
-Personalization is important
-Analytics and tracking progress
-It might be able to better serve women and minorities in STEM
-Focus on student’s questions (it promotes individual thinking)
-Track progress in an individualized way
-Coach students through problems
-Consider multiple iterations of the same lesson
-Stress problem solving strategies
-This program could be an equalizer in the classroom
-This program might boost student confidence
-This program might be good for international students with poor English
-Stress multiple learning mechanisms
-Break up each problem into tiny pieces
-Provide immediate feedback
-This program may help customize the curriculum
-It is a non-linear way to solve problems
+\section{Development of CITA}
+
+In order to create a consistent and effective system, I have divided the structure of \gls{cita} up into three main parts - Shallow CITA, Immersive CITA, and Postscripts. A single homework problem usually has all three of these pieces, but might omit one if it is not appropriate for the analysis. None of these individual pieces are functional on their own - it is only when they are combined in the proper way does the interactive analysis become useful.
+
+\subsection{Shallow CITA}
+
+Shallow CITA anticipates and corrects simple mistakes in student answers. This might include unit errors, misreading the question, or sign errors. It is intended to help students correct simple errors that would otherwise lose them easy points. It is useful because it highlights misconceptions that students have about physics concepts. In other words, Shallow CITA is meant to catch all of the ``low hanging fruit'' - the easy problems that can be solved with minimal trouble.
+
+Shallow CITA does not transition the user to a new interface. Therefore, it does not have enough space to set up a new model or derive new equations. Instead, it simply displays a short message (one paragraph or less) so that the user can make minor corrections to his or her analysis and continue with the remainder of the homework assignment.
+
+\subsection{Immersive CITA}
+
+Immersive CITA gives a step-by-step walkthrough of the specific homework problem. Unlike other scaffolding systems, it does not simply give an algorithmic list of steps. Instead, students have to answer questions and work through the example in real time. Additionally, problems with multiple solution paths will have a branching structure by which students can make progress.
+
+Immersive CITA is not supposed to be an artificial intelligence. Instead, it provides the structure that students need to think about a problem. It encourages discussion over algorithms. Thus, immersive CITA guides students through problems so that they have the background knowledge needed to participate in discussions.
+
+\subsection{Postscripts}
+
+At the end of each problem, we present one or two qualitative questions that expand on the topics covered in the preceding question. For example, after solving a circuit question, we might ask students how the problem would change if the battery was connected in reverse. These postscript questions are not counted for a grade; instead, they are meant to encourage deeper thought about the problem. This deeper thought about the homework question is meant to expand student’s knowledge of the concepts at hand.
+
+Oftentimes, we will use this section to ask slightly more obscure questions that would not usually be fitting for a graded homework. For example, we might ask the introductory physics students to speculate how Maxwell's equations would change if magnetic monopoles did exist. Or we might ask the students to estimate the electric potential energy needed to launch a projectile to the moon. Once again, these questions are not meant to be harshly graded - only to make the students play around with the concepts at hand.
 
 \section{Analysis Tools}
 
 \subsection{CHIP}
 
-The CHIP program has a set of built in tools.
-
-\subsection{R}
+\gls{chip} has a useful set of built in statistical analysis tools. Most of the quantiative analysis that we plan to do will take place through the \gls{chip} \gls{gui}. However, \gls{chip} does not support operations like Student T-Tests or ANOVA. These additional operations will be done using R or an equivalent statistical analysis program.
 
 \subsection{Muffin}
 
-Over the course of this project, we will have to deal with data from a variety of sources. For example, we will have to review CSV data from the CHIP website, JSON data from the Piazza website, audio data from focus group transcripts, and written data from notes taken by teaching assistants over the course of the study. We need a simple and efficient way to translate one data format into another so that it can be used with \gls{chip}.
+Over the course of this project, we will have to deal with data from a variety of sources. For example, we will have to review CSV data from the \gls{chip} website, JSON data from the Piazza website, audio data from focus group transcripts, and written data from notes taken by teaching assistants over the course of the study. We need a simple and efficient way to translate one data format into another so that it can be used with \gls{chip}.
 
-I have written an open-source data analysis toolbox called Muffin that will handle this information. Muffin is a set of Ruby functions that will simply read and write data to a format appropriate for our study. The source code for Muffin is hosted on \index{RubyGems}RubyGems as well as on my personal \index{GitHub}GitHub page.
+I have written an open-source data analysis toolbox called Muffin that will handle this information. Muffin is a set of Ruby functions that will simply read and write data to a format appropriate for our study. The source code for Muffin is hosted on \index{Ruby Gems}Ruby Gems as well as on my personal \index{GitHub}GitHub page.
 
 Muffin is simply a toolbox that converts data from one format to another. It does not store anything or conduct analysis in any way. Thus, privacy is maintained, even when the Muffin source code is freely distributed online.
-
-\section{Development of CITA}
-
-We only continue exploring a topic if we feel comfortable in our environment and we feel it is worth it. We are economic creatures.
-
-Goals
-With the increased popularity of the online course as well as increased enrollment in the course as a whole, students need a homework website with an interactive learning tool that guides them through the homework no matter what time of day (i.e. different time zones, work schedules).  We want to design an computerized interactive TA (iTA) that is available at any time.
-
-We want to design interactive components for each individual problem that can help students develop an approach to problem solving.  The CITA will guide students through problems in such a way as to develop critical thinking and problem solving skills.
-
-High school teachers want to take the course to become accredited.  They see how physics should be thought out / structured.
-
-High Priority Goals
-- Update all content with \gls{cita} hints
-- Update the statistical analysis parts of the site for student learning outcomes (interactive graphs of statistics)
-- Review the site and bring all useful components to the forefront
-
-Medium Priority Goals
-- Update site graphics
--> Faculty First
--> Students Second
-- Update figures (interactive?)
-
-Low Priority Goals
-- Blackboard/Canvas/Whatever Integration
-- Mobile Support?
-
-\subsection{Shallow CITA}
-
-\index{Shallow CITA}
-
-\subsubsection{Postscripts}
-
-\index{Postscripts}
-
-\subsubsection{Estimation Problems}
-
-\subsection{Immersive CITA}
-\subsubsection{None}
-\subsubsection{Linear}
-\subsubsection{Branching}
-
-\section{What CITA Does Accomplish}
-
-\section{What CITA Does Not Accomplish}
-
-It is important to set boundaries.
-
-\subsection{It Does Not Replace Teachers}
-
-CITA in no way is designed to replace the job of a teacher in the classroom.
-
-\subsection{It is Not a Course Management Tool}
-
-
-
-\section{Background}
-
-\section{Building the System}
-
-\subsection{Shallow CITA}
-
-\index{Shallow CITA}Shallow CITA is used to catch all of the ``low-hanging fruit''.
-
-Units
-Question Phrasing
-Some negative signs (some require more explanation)
-
-\subsection{Immersive CITA}
-
-\subsection{Postscripts}
-
-\section{Research Question and Hypothesis}
-
-\section{Methodology}
-
-\section{Results}
-
-\subsection{Summer 2014 vs. Summer 2015 Homework Scores}
-
-INCLUDE BAR CHART COMPARING SCORES HERE. MAKE SURE THAT THE STANDARD DEVIATIONS ARE INCLUDED. BOX AND WHISKER PLOTS MIGHT ALSO BE APPROPRIATE.
