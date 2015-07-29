@@ -42,6 +42,50 @@ Muffin is simply a toolbox that converts data from one format to another. It doe
 
 \section{Current Results}
 
+\section{BEMA Results}
+
+We use the \gls{bema} exam to conduct a preliminary analysis of the effectiveness of the \gls{cita} on \gls{chip} system. In \ref{fig:bemaSp15} I plot the pre- and post-test scores of students taking the exam in the spring 2015 semester. These students are in the on-campus, PHYS 24100 course. In \ref{fig:bemaSu15} I plot the pre- and post-test scores of students taking the exam in the summer 2015 semester.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=6in]{img/chapter4/bema_spring_2015}
+	\caption[BEMA Scores for the Spring 2015 PHYS 24100 Class]{BEMA Scores for the Spring 2015 PHYS 24100 Class}
+  \label{fig:bemaSp15}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=6in]{img/chapter4/bema_summer_2015}
+	\caption[BEMA Scores for the Summer 2015 PHYS 24100 Class]{BEMA Scores for the Summer 2015 PHYS 24100 Class}
+  \label{fig:bemaSu15}
+\end{figure}
+
+The best way to compare the scores between the two classes is to compare the average gains of students rather than the \gls{bema} averages themselves. The Hake factor is calculated using the following formula:
+
+\begin{equation}
+	g = \frac{Post - Pre}{31 - Pre}
+\end{equation}
+
+Note that the 31 in the denominator comes from the fact that the maximum score on the \gls{bema} exam is 31 points. In \ref{fig:hakeFull} I plot the Hake factors for the two semesters. In the plots, I eliminate one outlier from the summer 2015 course that had a Hake factor of -22.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hake_spring_vs_summer_full}
+	\caption[Comparison of Hake Factors on the BEMA Between Spring and Summer 2015]{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015}
+  \label{fig:hakeFull}
+\end{figure}
+
+During the summer, we noticed a lot of scores that seemed very inflated. We suspect that many students were cheating on the \gls{bema} exam since they could take it online without any supervision. This was not a problem for the spring 2015 PHYS 24100 class because they all took the exam under closely monitored conditions. Thus, in order to better compare the Hake factors, I eliminte all data points from the summer where a student's pre-test score was 27 or higher. The new plot is shown in \ref{fig:hakeFiltered}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hake_spring_vs_summer_filtered}
+	\caption[Comparison of Hake Factors on the BEMA Between Spring and Summer 2015, Filtered to Eliminate Outliers and Pre-Test Grades Over 26/31 Points ]{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015, Filtered to Eliminate Outliers and Pre-Test Grades Over 26/31 Points}
+  \label{fig:hakeFiltered}
+\end{figure}
+
+On first glance, the summer 2015 semester outperformed the spring 2015 semester. Although the initial results for the \gls{bema} look promising, we do need to put them in context. First, the spring and summer sections of PHYS 24100 are two very different classes with two very different student bodies. The spring semester is a more traditional student body while the summer semester has the advantage of the internet as a reference (all of the students were online during the summer 2015 semester).
+
 \subsection{Other Notes}
 
 We plan to conduct our first focus group sessions and student interviews in the fall 2015 semester. Thus, as of now there is no focus group data that can be analyzed. Additionally, we plan to administer and grade the multi-step problem to on-campus sections of PHYS 24100 starting in the fall 2015 semester. Again, this analysis will be started in the upcoming months. Both of these branches of analysis are dependent on IRB approval from Purdue University.
