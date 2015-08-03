@@ -2,19 +2,17 @@
 
 \section{Background}
 
-Due to the increased popularity of online classes and the rising enrollment in foundational science and \index{engineering}engineering courses, professors and teaching assistants are under constant pressure to provide students with the assistance that they need throughout the semester - especially on homework assignments. When direct help from a faculty member is not available, students need an interactive learning tool that guides them through homework problems. This is especially important in an environment where students with diverse schedules must attend class (i.e. managing work and class or studying abroad). Student success in any course requires good communication between students and instructors. However, the expectation of access to faculty at any time is unrealistic with all of the duties of the teaching staff.
+Due to the increased popularity of online classes and the rising enrollment in foundational science and \index{engineering}engineering courses, professors and teaching assistants are under constant pressure to provide students with the assistance that they need throughout the semester - especially on homework assignments. When direct help from a faculty member is not available, students need an interactive learning tool that guides them through homework problems. This is especially important in an environment where nontraditional students with diverse schedules must attend class\cite{choy2002, horn1996}. Student success in any course requires good communication between students and instructors. However, the expectation of access to faculty at any time is unrealistic with all of the duties of the teaching staff.
 
 We are developing a \gls{cita} for the calculus-based introductory electricity and magnetism course for engineers at Purdue University. This program will guide students through homework problems while teaching the nuanced techniques of physics problem solving. The most often heard statement from students attempting a physics problem is, ``I don’t even know where to begin.'' Our goal is to design an interactive component for every homework problem that will develop help students generate an understanding of physics concepts and enchance their problem solving skills.
 
 Most computerized homework systems only provide a ``correct'' or ``incorrect'' response to an answer. If a student receives the ``incorrect'' message, there is no explanation as to why their logic was wrong. Even worse, these systems do not provide instruction on how to proceed from the point at which the student made a mistake. Sometimes, there is a link to a passage in the textbook that lists the derivation of the problem without specific context. At this point, the student either has to email an instructor, wait for recitation later in the week, or seek special appointments with instructors. Thus, the learning process is interrupted as the student waits for simple guidance. Our goal is to design, develop, implement, and analyze an online system that is available at any time to provide focused guidance to help students acquire the knowledge and skills necessary to solve the problem.
 
-!! Seek help from classmates with similar difficulties !!
-!! Benefit of the system - it's ok if students have similar difficulties. Knowledge becomes more public !!
-
--> Get rid of all mentions of critical thinking
--> Add Lit review from wendy wampler's thesis
--> Add Polya's book, it's foundational...
--> Add Mazur's book
+% !! Seek help from classmates with similar difficulties !!
+% Benefit of the system - it's ok if students have similar difficulties. Knowledge becomes more public
+% -> Add Lit review from wendy wampler's thesis
+% -> Add Polya's book, it's foundational...
+% -> Add Mazur's book
 
 \section{Overview of Electricity and Optics at Purdue}
 
@@ -36,7 +34,7 @@ Figure \ref{fig:percent} shows the percent of the total class that is enrolled i
 	\label{fig:enrollment}
 \end{figure}
 
-^Redo this chart^
+% ^Redo this chart^
 
 \begin{figure}[!hb]
 	\centering
@@ -49,7 +47,7 @@ Figure \ref{fig:percent} shows the percent of the total class that is enrolled i
 
 PHYS 24100 and PHYS 24100D use an in-house homework system called \gls{chip}. The \gls{chip} system is based on the CPlite homework system from the \gls{uiuc}. Purdue University adopted an early version of CPlite in 1997 and continued to make improvements to it over the next decade, adding statistical analysis tools, gradebooks, and updated homework problems. \gls{chip} services not only the introductory electromagnetism courses, but also many of the other physics courses at Purdue University.
 
--> Add a couple of references to the CPLite system.
+% -> Add a couple of references to the CPLite system.
 
 \subsection*{Strengths}
 
@@ -69,7 +67,7 @@ Although \gls{chip} has a successful history at Purdue, it is not without its pr
 
 Homework problems can be written as an interactive example and given a linear directory structure under which hints and guides can be placed. The student sees a help menu on the specific homework problem and can choose to be guided through the analysis in a step-by-step fashion. Interactive examples have been implemented on only 29 out of the 139 homework problems that students complete in a semester (about 20.9\% of the problems).
 
-^Give the third paragraph the same cadence as the first two^
+% ^Give the third paragraph the same cadence as the first two^
 
 Although these interactive examples make up a small percentage of the total homework, they are very popular among students. Every semester, students comment on how helpful these examples are. For example:
 
@@ -77,13 +75,13 @@ Although these interactive examples make up a small percentage of the total home
 Thank you for the help section in this problem! It was very well written and helped me figure out the problem and (hopefully) similar ones in the future!
 \end{quotation}
 
-^Indent this properly^
-Citation - Student 493 from Spring 2015 (eg)
-
-Cite one from CHIP system
-
-Cite one form girl and boy <---
-No "it" no "this"
+% ^Indent this properly^
+% Citation - Student 493 from Spring 2015 (eg)
+%
+% Cite one from CHIP system
+%
+% Cite one form girl and boy <---
+% No "it" no "this"
 
 These examples are representative of the need for.... suggests that the interactive examples can be expanded to assist the thousands of students enrolled annually in the course. The research group plans to update these interactive examples by adding a branching structure to the help system - students can explore different methods of solving a problem.
 Rephrase last sentence (add more?)
@@ -93,7 +91,7 @@ Rephrase last sentence (add more?)
 We want to develop \gls{cita} for the second semester of introductory physics (Electricity and Optics). This system would be available to guide students through the homework, not only teaching them physics concepts but also good problem solving skills. The development and implementation of \gls{cita} on \gls{chip} requires work on many fronts:
 
 \begin{enumerate}
-\item Converting each traditional homework problem into an interactive example, complete with a tutorial that promotes critical thinking as well as teaching physics
+\item Converting each traditional homework problem into an interactive example, complete with a tutorial that builds problem solving skills as well as teaches physics
 \item Updating the \gls{gui} on \gls{chip} to make the examples easy to follow
 \item Utilizing the unused statistical analysis tools in \gls{chip} in order to track student progress and implement constant improvements
 \end{enumerate}
