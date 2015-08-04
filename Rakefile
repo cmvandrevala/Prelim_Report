@@ -33,7 +33,8 @@ end
 task :clean do
   puts "Cleaning Up LaTeX Workspace"
   sh "rm -f *.aux *.bbl *.blg *.dvi *.log *.pdf *.synctex.gz"
-  sh "rm -f *.idx *.ilg *.ind *.lof *.lot *.toc *.glo *.gls *.ist"
+  sh "rm -f *.idx *.ilg *.ind *.lof *.lot *.toc *.glo *.gls"
+  sh "rm -f *.ist *.nav *.out *.snm"
   sh "rm -f frontmatter/*.aux frontmatter/*.log"
   sh "rm -f mainmatter/*.aux mainmatter/*.log"
   sh "rm -f appendix/*.aux appendix/*.log"

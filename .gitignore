@@ -10,7 +10,10 @@
 *.lof
 *.log
 *.lot
+*.nav
+*.out
 *.pdf
+*.snm
 *.toc
 *.xdy
 
