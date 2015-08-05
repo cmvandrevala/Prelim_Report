@@ -31,7 +31,7 @@ Table \ref{tab:questionStats} shows our current progress and future goals for de
 \pagebreak
 
 \begin{footnotesize}
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|p{2.5cm}|p{5.4cm}|p{4.4cm}|}
     \hline
@@ -57,14 +57,14 @@ Table \ref{tab:questionStats} shows our current progress and future goals for de
 \end{table}
 \end{footnotesize}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/question_statistics}
 	\caption[The Number of Linear and Branching Questions Implemented in the PHYS 24100 Homework]{The Number of Linear and Branching Questions Implemented in the PHYS 24100 Homework}
   \label{fig:questionStatistics}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|l|l|l|l|}
     \hline
@@ -107,7 +107,7 @@ Muffin is simply a toolbox that converts data from one format to another. It doe
 
 We used the \gls{bema} exam to conduct a preliminary analysis of the effectiveness of the \gls{cita} on \gls{chip} system. In \ref{fig:bemaSp15} I plot the pre- and post-test scores of students taking the exam in the spring 2015 semester. These students are in the on-campus, PHYS 24100 course. In Figure \ref{fig:bemaSu15} I plot the pre- and post-test scores of students taking the exam in the summer 2015 semester. Tables \ref{tab:statsSp15} and \ref{tab:statsSu15} provide a statistical analysis of the data. We see that the samples in each semester are not normally distributed. Using a Wilcoxon Signed-Rank test, we find that difference in the means between the pre- and post-test are statistically significant in both the spring and summer classes. The effect size of these differences is d = 0.588.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/bema_spring_2015}
 	\caption[BEMA Scores for the Spring 2015 PHYS 24100 Class]{BEMA Scores for the Spring 2015 PHYS 24100 Class}
@@ -115,7 +115,7 @@ We used the \gls{bema} exam to conduct a preliminary analysis of the effectivene
 \end{figure}
 
 \begin{small}
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|l|l|}
     \hline
@@ -143,7 +143,7 @@ We used the \gls{bema} exam to conduct a preliminary analysis of the effectivene
 \end{table}
 \end{small}
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/bema_summer_2015}
 	\caption[BEMA Scores for the Summer 2015 PHYS 24100 Class]{BEMA Scores for the Summer 2015 PHYS 24100 Class}
@@ -151,7 +151,7 @@ We used the \gls{bema} exam to conduct a preliminary analysis of the effectivene
 \end{figure}
 
 \begin{small}
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|l|l|}
     \hline
@@ -187,7 +187,7 @@ It is difficult to make a comparison of the spring and summer classes based on t
 
 Note that the 31 in the denominator comes from the fact that the maximum score on the \gls{bema} exam is 31 points. In Figure \ref{fig:hakeFull} I plot the Hake factors for the two semesters. In the plots, I eliminate one outlier from the summer 2015 course that had a Hake factor of -22.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/hake_spring_vs_summer_full}
 	\caption[Comparison of Hake Factors on the BEMA Between Spring and Summer 2015]{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015}
@@ -196,7 +196,7 @@ Note that the 31 in the denominator comes from the fact that the maximum score o
 
 During the summer, the research team noticed a lot of scores that seemed very inflated. We suspect that many students were cheating on the \gls{bema} exam since they could take it online without any supervision. This was not a problem for the spring 2015 PHYS 24100 class because they all took the exam under closely monitored conditions. Thus, in order to better compare the Hake factors, I eliminte all data points from the summer where a student's pre-test score was 27 or higher. The new plot is shown in Figure \ref{fig:hakeFiltered} and the statistical analysis is shown in Table \ref{tab:compareSpSu15}.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/hake_spring_vs_summer_filtered}
 	\caption[Comparison of Hake Factors on the BEMA Between Spring and Summer 2015, Filtered to Eliminate Outliers and Pre-Test Grades Over 26/31 Points ]{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015, Filtered to Eliminate Outliers and Pre-Test Grades Over 26/31 Points}
@@ -204,7 +204,7 @@ During the summer, the research team noticed a lot of scores that seemed very in
 \end{figure}
 
 \begin{small}
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|l|l|}
     \hline
@@ -236,39 +236,225 @@ On first glance, the summer 2015 semester outperformed the spring 2015 semester.
 
 I also plot the \gls{bema} scores for the spring and summer semesters versus scores on the first and second exams (Figures \ref{fig:bemaVsExOneSp15}, \ref{fig:bemaVsExTwoSp15}, \ref{fig:bemaVsExOneSu15}, and \ref{fig:bemaVsExTwoSu15}). Notice that the first and second exam for the summer classes have generally higher scores than the on-campus sections in the spring. We see this because the online classes can use their books, notes, and the internet to work on their exams.
 
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/bema_vs_ex1_sp15}
 	\caption[BEMA Hake Factor vs. Exam \#1 Scores]{BEMA Hake Factor vs. Exam \#1 Scores}
   \label{fig:bemaVsExOneSp15}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/bema_vs_ex2_sp15}
 	\caption[BEMA Hake Factor vs. Exam \#2 Scores]{BEMA Hake Factor vs. Exam \#2 Scores}
   \label{fig:bemaVsExTwoSp15}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/bema_vs_ex1_su15}
 	\caption[BEMA Hake Factor vs. Exam \#1 Scores]{BEMA Hake Factor vs. Exam \#1 Scores}
   \label{fig:bemaVsExOneSu15}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}
 	\centering
 	\includegraphics[width=6in]{img/chapter4/bema_vs_ex2_su15}
 	\caption[BEMA Hake Factor vs. Exam \#2 Scores]{BEMA Hake Factor vs. Exam \#2 Scores}
   \label{fig:bemaVsExTwoSu15}
 \end{figure}
 
-\subsection{Conclusions}
+\subsection{Homework Results}
+
+The homework scores yielded very interesting results in this study. One might expect that the inclusion of tutorials would automatically increase the overall score on the homework. However, what I found was quite different. In most cases, the inclusion of the \gls{cita} program did not appreciably affect student problem solving abilities on the homework; scores stayed approximately the same during most semesters. A few times, we see that homework scores were appreciably better during the summer 2015 session (i.e. summer 2015 vs. fall 2014 distance learning) while other times they are worse (i.e. summer 2015 vs. fall 2014).
+
+It is interesting to note that the standard deviation of the summer 2015 class is larger than most of the other classes. This might simply be an artifact of having tested only one class. However, it does merit future investigation.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hw_su15_vs_su14}
+	\caption[Homework Scores (Summer 2014 vs. Summer 2015)]{Homework Scores (Summer 2014 vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{figure}
+
+\begin{small}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Statistic} & \textbf{Value} \\
+	\hline
+	Mean of Summer 2015 & 0.803 \\
+	\hline
+	Mean of Summer 2014 & 0.830 \\
+	\hline
+	Standard Deviation of Summer 2015 & 0.288 \\
+	\hline
+	Standard Deviation of Summer 2014 & 0.242 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2014 & p-value $<$ 2.2e-16 \\
+	\hline
+	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 0.710 \\
+	\hline
+	Cohen's D of Homework Scores & 0.101 \\
+	\hline
+  \end{tabular}
+	\caption[Homework Scores (Summer 2014 vs. Summer 2015)]{Homework Scores (Summer 2014 vs. Summer 2015)}
+  \label{tab:hwSu14Su15}
+\end{table}
+\end{small}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hw_su15_vs_sp15}
+	\caption[Homework Scores (Spring 2015 vs. Summer 2015)]{Homework Scores (Spring 2015 vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{figure}
+
+\begin{small}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Statistic} & \textbf{Value} \\
+	\hline
+	Mean of Summer 2015 & 0.803 \\
+	\hline
+	Mean of Spring 2015 & 0.850 \\
+	\hline
+	Standard Deviation of Summer 2015 & 0.288 \\
+	\hline
+	Standard Deviation of Spring 2015 & 0.220 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Shapiro-Wilk Normality Test of Spring 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 0.4551 \\
+	\hline
+	Cohen's D of Homework Scores & 0.195 \\
+	\hline
+  \end{tabular}
+	\caption[Homework Scores (Spring 2015 vs. Summer 2015)]{Homework Scores (Spring 2015 vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{table}
+\end{small}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hw_su15_vs_sp15d}
+	\caption[Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{figure}
+
+\begin{small}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Statistic} & \textbf{Value} \\
+	\hline
+	Mean of Summer 2015 & 0.803 \\
+	\hline
+	Mean of Spring 2015 & 0.794 \\
+	\hline
+	Standard Deviation of Summer 2015 & 0.288 \\
+	\hline
+	Standard Deviation of Spring 2015 & 0.294 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Shapiro-Wilk Normality Test of Spring 2015 & p-value $<$ 2.166e-08 \\
+	\hline
+	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 0.7237 \\
+	\hline
+	Cohen's D of Homework Scores & 0.030 \\
+	\hline
+  \end{tabular}
+	\caption[Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{table}
+\end{small}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hw_su15_vs_f14}
+	\caption[Homework Scores (Fall 2014 vs. Summer 2015)]{Homework Scores (Fall 2014 vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{figure}
+
+\begin{small}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Statistic} & \textbf{Value} \\
+	\hline
+	Mean of Summer 2015 & 0.803 \\
+	\hline
+	Mean of Fall 2014 & 0.899 \\
+	\hline
+	Standard Deviation of Summer 2015 & 0.288 \\
+	\hline
+	Standard Deviation of Spring 2015 & 0.144 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Shapiro-Wilk Normality Test of Spring 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 0.012 \\
+	\hline
+	Cohen's D of Homework Scores & 0.5212 \\
+	\hline
+  \end{tabular}
+	\caption[Homework Scores (Fall 2014 vs. Summer 2015)]{Homework Scores (Fall 2014 vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{table}
+\end{small}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{img/chapter4/hw_su15_vs_f14d}
+	\caption[Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{figure}
+
+\begin{small}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Statistic} & \textbf{Value} \\
+	\hline
+	Mean of Summer 2015 & 0.803 \\
+	\hline
+	Mean of Fall 2014 & 0.694 \\
+	\hline
+	Standard Deviation of Summer 2015 & 0.288 \\
+	\hline
+	Standard Deviation of Spring 2015 & 0.296 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
+	\hline
+	Shapiro-Wilk Normality Test of Spring 2015 & p-value $<$ 9.146e-07 \\
+	\hline
+	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 3.726e-05 \\
+	\hline
+	Cohen's D of Homework Scores & 0.374 \\
+	\hline
+  \end{tabular}
+	\caption[Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+  \label{fig:hwSu14Su15}
+\end{table}
+\end{small}
+
+\section{Conclusions}
 
 Due to the gains in score data from above, we predict that student performance is postively affected by the \gls{cita} system. However, it is still too early to make any definitive conclusions. More testing is needed to see how the \gls{cita} system affects student learning.
 
-\subsection{Future Work}
+\section{Future Work}
 
 We plan to conduct our first focus group sessions and student interviews in the fall 2015 semester. Additionally, the research team plans to administer and grade the multi-step problem to on-campus sections of PHYS 24100 starting in the fall 2015 semester. Finally, starting in fall 2015 we would also like to study homework, quiz, and \gls{bema} scores on a question-by-question basis. This will allow us to find trends in the data to figure out which concepts specifically students are having the most trouble on.
 
