@@ -1,6 +1,7 @@
 *.aux
 *.bbl
 *.blg
+*.fff
 *.glo
 *.gls
 *.idx
@@ -15,6 +16,7 @@
 *.pdf
 *.snm
 *.toc
+*.ttt
 *.xdy
 
 .DS_store
