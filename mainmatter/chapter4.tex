@@ -14,7 +14,7 @@ Shallow \gls{cita} anticipates and corrects simple mistakes in student answers. 
 
 Shallow \gls{cita} is very important in our system because it filters out mistakes that come from superficial errors and mistakes that come from a true misunderstanding of the material. We do not want to force students to go through a full tutorial if they have only made a simple sign error. This would lead to dissatisfaction with the system and perhaps even a reluctance to use it in the future.
 
-Shallow \gls{cita} does not transition the user to a new interface. Therefore, there is not enough space on the screen to truly set up a new model or derive new equations. Instead, it simply displays a short message (one paragraph or less) so that the user can make minor corrections to his or her analysis and continue with the remainder of the homework assignment.
+Shallow \gls{cita} does not transition the user to a new \gls{gui}. Therefore, there is not enough space on the screen to truly set up a new model or derive new equations. Instead, it simply displays a short message (one paragraph or less) so that the user can make minor corrections to his or her analysis and continue with the remainder of the homework assignment.
 
 \subsection{Immersive CITA}
 
@@ -28,7 +28,73 @@ The crux of our study is to determine how different branching structures affect 
 
 Table \ref{tab:questionStats} shows our current progress and future goals for developing branching questions. In Figure \ref{fig:questionStatistics} I have plotted the number of questions that use the different types of branching systems in the homework. Notice how the research team has increased the number of linear and branching questions from spring to summer. Linear questions include those with only one single hint or a linear path. Branching questions are those that involve tree, recombination, and dead end structures.
 
-\pagebreak
+\subsection{Postscripts}
+
+After a student completes a homework problem, he or she is presented with one or two qualitative questions that expand on the topics covered in the homework. For example, after solving a circuit question, the followup question might ask students how the problem would change if the battery was connected in reverse. These postscript questions are not counted for a grade; instead, they are meant to encourage deeper thought about the problem. This deeper thought about the homework question is meant to expand student’s knowledge of the concepts at hand.
+
+This section can be used to ask slightly more obscure questions that would not usually be fitting for a graded homework. For example, we might ask the introductory physics students to speculate how Maxwell's equations would change if magnetic monopoles did exist. Or we might ask the students to estimate the electric potential energy needed to launch a projectile to the moon. Once again, these questions are not meant to be harshly graded - only to make the students think about the concepts in the homework.
+
+\section{Development of Analysis Tools}
+
+\subsection{CHIP}
+
+\gls{chip} has a useful set of built in statistical analysis tools. Most of the quantiative analysis that the research team plan to do will take place through the \gls{chip} \gls{gui}. However, \gls{chip} does not support operations like Student t-Tests or ANOVA. For now, these additional operations will be done using R or an equivalent statistical analysis program. They might be added to \gls{chip} at a later date.
+
+\subsection{Muffin}
+
+Over the course of this project, the research team will have to deal with data from a variety of sources. For example, CSV data from the \gls{chip} website might have to be parsed with JSON data from the Piazza website. Audio data from focus group transcripts might have to be compared to written data from notes taken by teaching assistants. We need a simple and efficient way to translate one data format into another.
+
+I have written an open-source data analysis toolbox called Muffin that will handle this information. Muffin is a set of Ruby functions that will read and write data to a format appropriate for our study. The source code for Muffin is hosted on \index{Ruby Gems}Ruby Gems as well as on my personal \index{GitHub}GitHub page.
+
+Muffin is simply a toolbox that converts data from one format to another. It does not store anything or conduct analysis in any way. Thus, privacy is maintained, even when the Muffin source code is freely distributed online.
+
+\section{Current Results}
+
+\subsection{BEMA Results}
+
+We used the \gls{bema} exam to conduct a preliminary analysis of the effectiveness of the \gls{cita} on \gls{chip} system. In \ref{fig:bemaSp15} I plot the pre- and post-test scores of students taking the exam in the spring 2015 semester. These students are in the on-campus, PHYS 24100 course. In Figure \ref{fig:bemaSu15} I plot the pre- and post-test scores of students taking the exam in the summer 2015 semester. Tables \ref{tab:statsSp15} and \ref{tab:statsSu15} provide a statistical analysis of the data. We see that the samples in each semester are not normally distributed. Using a Wilcoxon Signed-Rank test, we find that difference in the means between the pre- and post-test are statistically significant in both the spring and summer classes. The effect size of these differences is d = 0.588.
+
+It is difficult to make a comparison of the spring and summer classes based on the raw scores alone. The best way to compare the scores between the two classes is to compare the average gains of students rather than the \gls{bema} averages themselves. The Hake or gain factor is calculated using the following formula:
+
+\begin{equation}
+	g = \frac{Post - Pre}{31 - Pre}
+\end{equation}
+
+Note that the 31 in the denominator comes from the fact that the maximum score on the \gls{bema} exam is 31 points. In Figure \ref{fig:hakeFull} I plot the Hake factors for the two semesters. In the plots, I eliminate one outlier from the summer 2015 course that had a Hake factor of -22.
+
+During the summer, the research team noticed a lot of scores that seemed very inflated. We suspect that many students were cheating on the \gls{bema} exam since they could take it online without any supervision. This was not a problem for the spring 2015 PHYS 24100 class because they all took the exam under closely monitored conditions. Thus, in order to better compare the Hake factors, I eliminte all data points from the summer where a student's pre-test score was 27 or higher. The new plot is shown in Figure \ref{fig:hakeFiltered} and the statistical analysis is shown in Table \ref{tab:hakeFiltered}.
+
+I also compare the \gls{bema} data between the spring distance learning section and the summer 2015 section. Again, I calculate the Hake factor for each student that took both the pre- and post-test and eliminate any data points with a pre-test score of 27 or higher. The plot is show in Figure \ref{fig:hakeSp15dSu15} and the statistical analysis is shown in Table \ref{tab:hakeSp15dSu15}.
+
+On first glance, the summer 2015 semester outperformed the spring 2015 semester. Although the initial results for the \gls{bema} look promising, we need to be careful. The spring and summer sections of PHYS 24100 are two very different classes with two very different student bodies. The spring semester is a more traditional student body while the summer semester has the advantage of the internet as a reference (all of the students were online during the summer 2015 semester). Additionally, the number of data points in the distance learning section was severely restricted due to small class sizes and multiple students taking either the pre- or post-test, but not both. Thus, more testing is needed to see if these results truly hold up.
+
+I also plot the \gls{bema} scores for the spring and summer semesters versus scores on the first and second exams (Figures \ref{fig:bemaVsExOneSp15}, \ref{fig:bemaVsExTwoSp15}, \ref{fig:bemaVsExOneSu15}, and \ref{fig:bemaVsExTwoSu15}). Notice that the first and second exam scores for the summer 2015 semester are generally higher than the on-campus sections in the spring. We see this because the online classes can use their books, notes, and the internet to work on their exams.
+
+\subsection{Homework Results}
+
+The homework scores yielded very interesting results in this study. One might expect that the inclusion of tutorials would automatically increase the overall score on the homework. However, what I found was quite different. In most cases, the inclusion of the \gls{cita} program did not appreciably affect student problem solving abilities on the homework; scores stayed approximately the same during most semesters (see Figures \ref{fig:hwSu14Su15}, \ref{fig:hwSp15Su15}, and \ref{fig:hwSp15dSu15}; see Tables \ref{fig:hwSu14Su15}, \ref{fig:hwSp15Su15}, and \ref{fig:hwSp15dSu15}). We see that the homework scores were more varied between the summer 2015 semester and the fall 2014 semester (see Figures \ref{fig:hwFa14Su15} and \ref{fig:hwFa14dSu15}; see Tables \ref{fig:hwFa14Su15} and \ref{fig:hwFa14dSu15}).
+
+It is interesting to note that the standard deviation of the summer 2015 class is larger than most of the other classes. This might simply be an artifact of having tested only one class. However, it does merit future investigation.
+
+\subsection{Quiz Results}
+
+The recitation and lecture quizzes that are given to the PHYS 24100 and PHYS 24100D classes did not change appreciably between the summer 2014 semester and the summer 2015 semester. Thus, they are a good way to study the problem solving skills of the classes.
+
+Within the pool of recitation quizzes, two of the three comparisons were not statistically different from the summer 2014 scores (see Figures \ref{fig:rqSu14Su15} and \ref{fig:rqSp15dSu15}; see Tables \ref{fig:rqSu14Su15} and \ref{fig:rqSp15dSu15}). However, the summer 2015 scores were markedly improved from the fall 2014 distance learning scores (see Figure \ref{fig:rqf14dSu15} and Table \ref{rqf14dSu15}).
+
+The lecture quiz scores were more surprising. I found gains in the lecture quiz scores between all three control groups (two of them statistically significant). Additionally, these gains were paired with large effect sizes. See Figures \ref{fig:lqSu14Su15}, \ref{fig:lqf14dSu15}, and \ref{fig:rqSp15dSu15} for plots of the data. See Tables \ref{tab:lqSu14Su15}, \ref{tab:lqf14dSu15}, and \ref{tab:rqSp15dSu15} for the statistical analysis. Lecture quizzes are meant to assess student understanding of conceptual materials, so perhaps the \gls{cita} system is improving student understanding of basic physics concepts. More testing is needed to say for sure.
+
+\section{Conclusions}
+
+Although the homework and recitation quiz scores do not suggest much gain from the \gls{cita} program, we see large gains with the \gls{bema} and lecture quiz scores between \gls{cita} and non-\gls{cita} students. Additionally, student performance with homework and recitation quizzes did not decrease substantially compared to previous semesters (i.e. scores broke even). Thus, I predict that student performance is postively affected by the \gls{cita} system. I also predict that as the \gls{cita} program is built up over the course of many semesters, the gains will become much more noticeable in all aspects of the analysis.
+
+\section{Future Work}
+
+We plan to conduct our first focus group sessions and student interviews in the fall 2015 semester. Additionally, the research team plans to administer and grade the multi-step problem to on-campus sections of PHYS 24100 starting in the fall 2015 semester. Finally, starting in fall 2015 we would also like to study homework, quiz, and \gls{bema} scores on a question-by-question basis. This will allow us to find trends in the data to figure out which concepts specifically students are having the most trouble on.
+
+The summer 2015 semester of PHYS 24100 will take their final exams during the week August 3, 2015. Thus, the analysis of their exit survey data, end-of-the-semester feedback, final exam data, and final grade data will be deferred to the fall 2015 semester.
+
+\pagebreak\clearpage
 
 \begin{footnotesize}
 \begin{table}
@@ -57,12 +123,7 @@ Table \ref{tab:questionStats} shows our current progress and future goals for de
 \end{table}
 \end{footnotesize}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=5in]{img/chapter4/question_statistics}
-	\caption[The Number of Linear and Branching Questions Implemented in the PHYS 24100 Homework]{The Number of Linear and Branching Questions Implemented in the PHYS 24100 Homework}
-  \label{fig:questionStatistics}
-\end{figure}
+\pagebreak\clearpage
 
 \begin{table}
   \centering
@@ -81,38 +142,25 @@ Table \ref{tab:questionStats} shows our current progress and future goals for de
   \label{tab:questionStats}
 \end{table}
 
-\subsection{Postscripts}
+\pagebreak\clearpage
 
-After a student completes a homework problem, he or she is presented with one or two qualitative questions that expand on the topics covered in the homework. For example, after solving a circuit question, the followup question might ask students how the problem would change if the battery was connected in reverse. These postscript questions are not counted for a grade; instead, they are meant to encourage deeper thought about the problem. This deeper thought about the homework question is meant to expand student’s knowledge of the concepts at hand.
+\begin{figure}
+	\centering
+	\includegraphics[width=6in]{img/chapter4/question_statistics}
+	\caption{Number and Type of Questions Implemented in the Homework}
+  \label{fig:questionStatistics}
+\end{figure}
 
-This section can be used to ask slightly more obscure questions that would not usually be fitting for a graded homework. For example, we might ask the introductory physics students to speculate how Maxwell's equations would change if magnetic monopoles did exist. Or we might ask the students to estimate the electric potential energy needed to launch a projectile to the moon. Once again, these questions are not meant to be harshly graded - only to make the students think about the concepts in the homework.
-
-\section{Development of Analysis Tools}
-
-\subsection{CHIP}
-
-\gls{chip} has a useful set of built in statistical analysis tools. Most of the quantiative analysis that the research team plan to do will take place through the \gls{chip} \gls{gui}. However, \gls{chip} does not support operations like Student t-Tests or ANOVA. For now, these additional operations will be done using R or an equivalent statistical analysis program. They might be added to \gls{chip} at a later date.
-
-\subsection{Muffin}
-
-Over the course of this project, the research team will have to deal with data from a variety of sources. For example, CSV data from the \gls{chip} website might have to be parsed with JSON data from the Piazza website. Audio data from focus group transcripts might have to be compared to written data from notes taken by teaching assistants. We need a simple and efficient way to translate one data format into another.
-
-I have written an open-source data analysis toolbox called Muffin that will handle this information. Muffin is a set of Ruby functions that will read and write data to a format appropriate for our study. The source code for Muffin is hosted on \index{Ruby Gems}Ruby Gems as well as on my personal \index{GitHub}GitHub page.
-
-Muffin is simply a toolbox that converts data from one format to another. It does not store anything or conduct analysis in any way. Thus, privacy is maintained, even when the Muffin source code is freely distributed online.
-
-\section{Current Results}
-
-\subsection{BEMA Results}
-
-We used the \gls{bema} exam to conduct a preliminary analysis of the effectiveness of the \gls{cita} on \gls{chip} system. In \ref{fig:bemaSp15} I plot the pre- and post-test scores of students taking the exam in the spring 2015 semester. These students are in the on-campus, PHYS 24100 course. In Figure \ref{fig:bemaSu15} I plot the pre- and post-test scores of students taking the exam in the summer 2015 semester. Tables \ref{tab:statsSp15} and \ref{tab:statsSu15} provide a statistical analysis of the data. We see that the samples in each semester are not normally distributed. Using a Wilcoxon Signed-Rank test, we find that difference in the means between the pre- and post-test are statistically significant in both the spring and summer classes. The effect size of these differences is d = 0.588.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/bema_spring_2015}
-	\caption[BEMA Scores for the Spring 2015 PHYS 24100 Class]{BEMA Scores for the Spring 2015 PHYS 24100 Class}
+	\caption{BEMA Scores for the Spring 2015 PHYS 24100 Class}
   \label{fig:bemaSp15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -143,12 +191,16 @@ We used the \gls{bema} exam to conduct a preliminary analysis of the effectivene
 \end{table}
 \end{small}
 
+\pagebreak\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/bema_summer_2015}
-	\caption[BEMA Scores for the Summer 2015 PHYS 24100 Class]{BEMA Scores for the Summer 2015 PHYS 24100 Class}
+	\caption{BEMA Scores for the Summer 2015 PHYS 24100 Class}
   \label{fig:bemaSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -179,29 +231,25 @@ We used the \gls{bema} exam to conduct a preliminary analysis of the effectivene
 \end{table}
 \end{small}
 
-It is difficult to make a comparison of the spring and summer classes based on the raw scores alone. The best way to compare the scores between the two classes is to compare the average gains of students rather than the \gls{bema} averages themselves. The Hake or gain factor is calculated using the following formula:
-
-\begin{equation}
-	g = \frac{Post - Pre}{31 - Pre}
-\end{equation}
-
-Note that the 31 in the denominator comes from the fact that the maximum score on the \gls{bema} exam is 31 points. In Figure \ref{fig:hakeFull} I plot the Hake factors for the two semesters. In the plots, I eliminate one outlier from the summer 2015 course that had a Hake factor of -22.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hake_spring_vs_summer_full}
-	\caption[Comparison of Hake Factors on the BEMA Between Spring and Summer 2015]{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015}
+	\caption{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015}
   \label{fig:hakeFull}
 \end{figure}
 
-During the summer, the research team noticed a lot of scores that seemed very inflated. We suspect that many students were cheating on the \gls{bema} exam since they could take it online without any supervision. This was not a problem for the spring 2015 PHYS 24100 class because they all took the exam under closely monitored conditions. Thus, in order to better compare the Hake factors, I eliminte all data points from the summer where a student's pre-test score was 27 or higher. The new plot is shown in Figure \ref{fig:hakeFiltered} and the statistical analysis is shown in Table \ref{tab:compareSpSu15}.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hake_spring_vs_summer_filtered}
-	\caption[Comparison of Hake Factors on the BEMA Between Spring and Summer 2015, Filtered to Eliminate Outliers and Pre-Test Grades Over 26/31 Points ]{Comparison of Hake Factors on the BEMA Between Spring and Summer 2015, Filtered to Eliminate Outliers and Pre-Test Grades Over 26/31 Points}
+	\caption{Comparison of Filtered Hake Factors on the BEMA Between Spring and Summer 2015}
   \label{fig:hakeFiltered}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -228,16 +276,20 @@ During the summer, the research team noticed a lot of scores that seemed very in
 	\hline
   \end{tabular}
   \caption{Spring vs. Summer 2015 Hake Factors, filtering out any data with a pre-test score above 26/31.}
-  \label{tab:compareSpSu15}
+  \label{tab:hakeFiltered}
 \end{table}
 \end{small}
+
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hake_su15_vs_sp15d}
-	\caption[Comparison of Hake Factors on the BEMA Between Distance Learning Course in Spring 2015 and Summer 2015]{Comparison of Hake Factors on the BEMA Between Distance Learning Course in Spring 2015 and Summer 2015}
+	\caption{Comparison of Hake Factors on the BEMA Between Distance Learning Course in Spring 2015 and Summer 2015}
   \label{fig:hakeSp15dSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -268,9 +320,7 @@ During the summer, the research team noticed a lot of scores that seemed very in
 \end{table}
 \end{small}
 
-On first glance, the summer 2015 semester outperformed the spring 2015 semester. Although the initial results for the \gls{bema} look promising, we need to be careful. The spring and summer sections of PHYS 24100 are two very different classes with two very different student bodies. The spring semester is a more traditional student body while the summer semester has the advantage of the internet as a reference (all of the students were online during the summer 2015 semester). Thus, more testing is needed to see if these results truly hold up.
-
-I also plot the \gls{bema} scores for the spring and summer semesters versus scores on the first and second exams (Figures \ref{fig:bemaVsExOneSp15}, \ref{fig:bemaVsExTwoSp15}, \ref{fig:bemaVsExOneSu15}, and \ref{fig:bemaVsExTwoSu15}). Notice that the first and second exam for the summer classes have generally higher scores than the on-campus sections in the spring. We see this because the online classes can use their books, notes, and the internet to work on their exams.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
@@ -279,12 +329,16 @@ I also plot the \gls{bema} scores for the spring and summer semesters versus sco
   \label{fig:bemaVsExOneSp15}
 \end{figure}
 
+\pagebreak\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/bema_vs_ex2_sp15}
 	\caption[BEMA Hake Factor vs. Exam \#2 Scores]{BEMA Hake Factor vs. Exam \#2 Scores}
   \label{fig:bemaVsExTwoSp15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
@@ -293,6 +347,8 @@ I also plot the \gls{bema} scores for the spring and summer semesters versus sco
   \label{fig:bemaVsExOneSu15}
 \end{figure}
 
+\pagebreak\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/bema_vs_ex2_su15}
@@ -300,11 +356,7 @@ I also plot the \gls{bema} scores for the spring and summer semesters versus sco
   \label{fig:bemaVsExTwoSu15}
 \end{figure}
 
-\subsection{Homework Results}
-
-The homework scores yielded very interesting results in this study. One might expect that the inclusion of tutorials would automatically increase the overall score on the homework. However, what I found was quite different. In most cases, the inclusion of the \gls{cita} program did not appreciably affect student problem solving abilities on the homework; scores stayed approximately the same during most semesters. A few times, we see that homework scores were appreciably better during the summer 2015 session (i.e. summer 2015 vs. fall 2014 distance learning) while other times they are worse (i.e. summer 2015 vs. fall 2014).
-
-It is interesting to note that the standard deviation of the summer 2015 class is larger than most of the other classes. This might simply be an artifact of having tested only one class. However, it does merit future investigation.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
@@ -312,6 +364,8 @@ It is interesting to note that the standard deviation of the summer 2015 class i
 	\caption[Homework Scores (Summer 2014 vs. Summer 2015)]{Homework Scores (Summer 2014 vs. Summer 2015)}
   \label{fig:hwSu14Su15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -342,12 +396,16 @@ It is interesting to note that the standard deviation of the summer 2015 class i
 \end{table}
 \end{small}
 
+\pagebreak\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hw_su15_vs_sp15}
-	\caption[Homework Scores (Spring 2015 vs. Summer 2015)]{Homework Scores (Spring 2015 vs. Summer 2015)}
-  \label{fig:hwSu14Su15}
+	\caption{Homework Scores (Spring 2015 vs. Summer 2015)}
+  \label{fig:hwSp15Su15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -373,17 +431,21 @@ It is interesting to note that the standard deviation of the summer 2015 class i
 	Cohen's D of Homework Scores & 0.195 \\
 	\hline
   \end{tabular}
-	\caption[Homework Scores (Spring 2015 vs. Summer 2015)]{Homework Scores (Spring 2015 vs. Summer 2015)}
-  \label{fig:hwSu14Su15}
+	\caption{Homework Scores (Spring 2015 vs. Summer 2015)}
+  \label{fig:hwSp14Su15}
 \end{table}
 \end{small}
+
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hw_su15_vs_sp15d}
-	\caption[Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
-  \label{fig:hwSu14Su15}
+	\caption{Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+  \label{fig:hwSp15dSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -409,17 +471,21 @@ It is interesting to note that the standard deviation of the summer 2015 class i
 	Cohen's D of Homework Scores & 0.030 \\
 	\hline
   \end{tabular}
-	\caption[Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
-  \label{fig:hwSu14Su15}
+	\caption{Homework Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+  \label{fig:hwSp15dSu15}
 \end{table}
 \end{small}
+
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hw_su15_vs_f14}
-	\caption[Homework Scores (Fall 2014 vs. Summer 2015)]{Homework Scores (Fall 2014 vs. Summer 2015)}
-  \label{fig:hwSu14Su15}
+	\caption{Homework Scores (Fall 2014 vs. Summer 2015)}
+  \label{fig:hwFa14Su15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -434,28 +500,32 @@ It is interesting to note that the standard deviation of the summer 2015 class i
 	\hline
 	Standard Deviation of Summer 2015 & 0.288 \\
 	\hline
-	Standard Deviation of Spring 2015 & 0.144 \\
+	Standard Deviation of Fall 2014 & 0.144 \\
 	\hline
 	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
 	\hline
-	Shapiro-Wilk Normality Test of Spring 2015 & p-value $<$ 2.2e-16 \\
+	Shapiro-Wilk Normality Test of Fall 2014 & p-value $<$ 2.2e-16 \\
 	\hline
 	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 0.012 \\
 	\hline
 	Cohen's D of Homework Scores & 0.5212 \\
 	\hline
   \end{tabular}
-	\caption[Homework Scores (Fall 2014 vs. Summer 2015)]{Homework Scores (Fall 2014 vs. Summer 2015)}
-  \label{fig:hwSu14Su15}
+	\caption{Homework Scores (Fall 2014 vs. Summer 2015)}
+  \label{fig:hwFa14Su15}
 \end{table}
 \end{small}
+
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/hw_su15_vs_f14d}
-	\caption[Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+	\caption{Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
   \label{fig:hwf14dSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -470,32 +540,32 @@ It is interesting to note that the standard deviation of the summer 2015 class i
 	\hline
 	Standard Deviation of Summer 2015 & 0.288 \\
 	\hline
-	Standard Deviation of Spring 2015 & 0.296 \\
+	Standard Deviation of Fall 2014 & 0.296 \\
 	\hline
 	Shapiro-Wilk Normality Test of Summer 2015 & p-value $<$ 2.2e-16 \\
 	\hline
-	Shapiro-Wilk Normality Test of Spring 2015 & p-value = 9.146e-07 \\
+	Shapiro-Wilk Normality Test of Fall 2014 & p-value = 9.146e-07 \\
 	\hline
 	Wilcoxon Signed-Rank Test of Homework Scores & p-value = 3.726e-05 \\
 	\hline
 	Cohen's D of Homework Scores & 0.374 \\
 	\hline
   \end{tabular}
-	\caption[Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+	\caption{Homework Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
   \label{tab:hwf14dSu15}
 \end{table}
 \end{small}
 
-\subsection{Recitation Quiz Results}
-
-The recitation quizzes that are given to the PHYS 24100 and PHYS 24100D classes did not change appreciably between the summer 2014 semester and the summer 2015 semester. Thus, they are a good way to study the problem solving skills of the classes. In two of the three comparisons, the summer 2015 scores (those with \gls{cita}) were not statistically different from the summer 2014 or spring 2015 distance learning scores. However, the summer 2015 scores were markedly improved from the fall 2014 distance learning scores.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/rq_su15_vs_su14}
-	\caption[Recitation Quiz Scores (Summer 2014 vs. Summer 2015)]{Recitation Quiz Scores (Summer 2014 vs. Summer 2015)}
+	\caption{Recitation Quiz Scores (Summer 2014 vs. Summer 2015)}
   \label{fig:rqSu14Su15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -521,53 +591,21 @@ The recitation quizzes that are given to the PHYS 24100 and PHYS 24100D classes 
 	Cohen's D of Recitation Quiz Scores & 0.103 \\
 	\hline
   \end{tabular}
-	\caption[Recitation Quiz Scores (Summer 2014 vs. Summer 2015)]{Recitation Quiz Scores (Summer 2014 vs. Summer 2015)}
+	\caption{Recitation Quiz Scores (Summer 2014 vs. Summer 2015)}
   \label{tab:rqSu14Su15}
 \end{table}
 \end{small}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=5in]{img/chapter4/rq_su15_vs_f14d}
-	\caption[Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
-  \label{fig:rqf14dSu15}
-\end{figure}
-
-\begin{small}
-\begin{table}
-  \centering
-  \begin{tabular}{|l|l|}
-    \hline
-    \textbf{Statistic} & \textbf{Value} \\
-	\hline
-	Mean of Summer 2015 & 6.570 \\
-	\hline
-	Mean of Fall 2014 & 6.022 \\
-	\hline
-	Standard Deviation of Summer 2015 & 1.485 \\
-	\hline
-	Standard Deviation of Fall 2014 & 1.786 \\
-	\hline
-	Shapiro-Wilk Normality Test of Summer 2015 & p-value = 0.0006211 \\
-	\hline
-	Shapiro-Wilk Normality Test of Fall 2014 & p-value = 0.6931 \\
-	\hline
-	Wilcoxon Signed-Rank Test of Recitation Quiz Scores & p-value = 0.02972 \\
-	\hline
-	Cohen's D of Recitation Quiz Scores & 0.351 \\
-	\hline
-  \end{tabular}
-	\caption[Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
-  \label{tab:rqf14dSu15}
-\end{table}
-\end{small}
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/rq_su15_vs_sp15d}
-	\caption[Recitation Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Recitation Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
-  \label{fig:rqsp15dSu15}
+	\caption{Recitation Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+  \label{fig:rqSp15dSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -593,21 +631,61 @@ The recitation quizzes that are given to the PHYS 24100 and PHYS 24100D classes 
 	Cohen's D of Recitation Quiz Scores & 0.191 \\
 	\hline
   \end{tabular}
+	\caption{Recitation Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+  \label{tab:rqSp15dSu15}
+\end{table}
+\end{small}
+
+\pagebreak\clearpage
+
+\begin{figure}
+	\centering
+	\includegraphics[width=5in]{img/chapter4/rq_su15_vs_f14d}
 	\caption[Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+  \label{fig:rqf14dSu15}
+\end{figure}
+
+\pagebreak\clearpage
+
+\begin{small}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Statistic} & \textbf{Value} \\
+	\hline
+	Mean of Summer 2015 & 6.570 \\
+	\hline
+	Mean of Fall 2014 & 6.022 \\
+	\hline
+	Standard Deviation of Summer 2015 & 1.485 \\
+	\hline
+	Standard Deviation of Fall 2014 & 1.786 \\
+	\hline
+	Shapiro-Wilk Normality Test of Summer 2015 & p-value = 0.0006211 \\
+	\hline
+	Shapiro-Wilk Normality Test of Fall 2014 & p-value = 0.6931 \\
+	\hline
+	Wilcoxon Signed-Rank Test of Recitation Quiz Scores & p-value = 0.02972 \\
+	\hline
+	Cohen's D of Recitation Quiz Scores & 0.351 \\
+	\hline
+  \end{tabular}
+	\caption{Recitation Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
   \label{tab:rqf14dSu15}
 \end{table}
 \end{small}
 
-\subsection{Lecture Quiz Results}
-
-The lecture quiz scores are another excellent way to judge the effectiveness of the \gls{cita} system since they did not change between summer 2014 and summer 2015. I found large gains in the lecture quiz scores between all three control groups (summer 2015 vs. spring 2015 distance learning, fall 2014 distance learning, and summer 2014). This is a very surprising and promising result; lecture quizzes are meant to assess student understanding of conceptual materials, so perhaps the \gls{cita} system is improving student understanding of basic physics concepts. More testing is needed to say for sure.
+\pagebreak\clearpage
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/lq_su15_vs_su14}
-	\caption[Lecture Quiz Scores (Summer 2014 vs. Summer 2015)]{Lecture Quiz Scores (Summer 2014 vs. Summer 2015)}
+	\caption{Lecture Quiz Scores (Summer 2014 vs. Summer 2015)}
   \label{fig:lqSu14Su15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -633,17 +711,21 @@ The lecture quiz scores are another excellent way to judge the effectiveness of 
 	Cohen's D of Lecture Quiz Scores & 0.188 \\
 	\hline
   \end{tabular}
-	\caption[Lecture Quiz Scores (Summer 2014 vs. Summer 2015)]{Lecture Quiz Scores (Summer 2014 vs. Summer 2015)}
+	\caption{Lecture Quiz Scores (Summer 2014 vs. Summer 2015)}
   \label{tab:lqSu14Su15}
 \end{table}
 \end{small}
 
+\pagebreak\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/lq_su15_vs_f14d}
-	\caption[Lecture Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Lecture Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+	\caption{Lecture Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
   \label{fig:lqf14dSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -669,17 +751,21 @@ The lecture quiz scores are another excellent way to judge the effectiveness of 
 	Cohen's D of Lecture Quiz Scores & 0.754 \\
 	\hline
   \end{tabular}
-	\caption[Lecture Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)]{Lecture Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
+	\caption{Lecture Quiz Scores (Fall 2014 - Distance Learning vs. Summer 2015)}
   \label{tab:lqf14dSu15}
 \end{table}
 \end{small}
 
+\pagebreak\clearpage
+
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter4/lq_su15_vs_sp15d}
-	\caption[Lecture Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Lecture Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+	\caption{Lecture Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
   \label{fig:rqSp15dSu15}
 \end{figure}
+
+\pagebreak\clearpage
 
 \begin{small}
 \begin{table}
@@ -705,17 +791,7 @@ The lecture quiz scores are another excellent way to judge the effectiveness of 
 	Cohen's D of Lecture Quiz Scores & 1.037 \\
 	\hline
   \end{tabular}
-	\caption[Lecture Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)]{Lecture Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
+	\caption{Lecture Quiz Scores (Spring 2015 - Distance Learning vs. Summer 2015)}
   \label{tab:rqSp15dSu15}
 \end{table}
 \end{small}
-
-\section{Conclusions}
-
-Due to the gains in score data from above, we predict that student performance is postively affected by the \gls{cita} system. However, it is still too early to make any definitive conclusions. More testing is needed to see how the \gls{cita} system affects student learning.
-
-\section{Future Work}
-
-We plan to conduct our first focus group sessions and student interviews in the fall 2015 semester. Additionally, the research team plans to administer and grade the multi-step problem to on-campus sections of PHYS 24100 starting in the fall 2015 semester. Finally, starting in fall 2015 we would also like to study homework, quiz, and \gls{bema} scores on a question-by-question basis. This will allow us to find trends in the data to figure out which concepts specifically students are having the most trouble on.
-
-The summer 2015 semester of PHYS 24100 will take their final exams during the week August 3, 2015. Thus, the analysis of their exit survey data, end-of-the-semester feedback, final exam data, and final grade data will be deferred to the fall 2015 semester.
