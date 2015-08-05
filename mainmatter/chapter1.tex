@@ -4,11 +4,11 @@
 
 Due to the increased popularity of online classes and the rising enrollment in \index{foundational courses}foundational science and engineering courses, professors and teaching assistants are under constant pressure to provide students with assistance throughout the semester. Weekly homework assignments in particular require teachers to dedicate a large amount of time and energy to help students through their questions. When direct help from a faculty member is not available, students need an interactive learning tool that guides them through homework problems. This is especially important in an environment where nontraditional students with diverse schedules must attend class\cite{choy2002, horn1996}. Student success in any course requires good communication between students and instructors. However, the expectation of access to faculty at any time is unrealistic with all of the duties of the teaching staff.
 
-We are developing a \gls{cita} for the calculus-based introductory electricity and magnetism course for engineers at Purdue University. This program will guide students through homework problems while teaching the nuanced techniques of physics problem solving. The most often heard statement from students attempting a physics problem is, ``I don’t even know where to begin.'' Our goal is to design an interactive component for every homework problem that will help students develop an understanding of physics concepts and enhance their \index{problem solving}problem solving skills.
+We are developing a \gls{cita} for the calculus-based introductory electricity and magnetism course for engineering students at Purdue University. This program will guide students through homework problems while teaching the nuanced techniques of physics problem solving. The most often heard statement from students attempting a physics problem is, ``I don’t even know where to begin.'' Our goal is to design an interactive component for every homework problem that will help students develop an understanding of physics concepts and enhance their \index{problem solving}problem solving skills.
 
 Most computerized homework systems only provide a ``correct'' or ``incorrect'' response to an answer. \index{problem solving}If a student receives the ``incorrect'' message, there is usually no explanation as to why their logic was wrong. Even worse, these systems do not provide instruction on how to proceed from the point at which the student made the mistake. Instead, there is a link to a passage in the textbook that outlines a derivation without any specific context. At this point, the student either has to contact an instructor or wait for recitation later in the week. Thus, the learning process is interrupted as the student waits for simple guidance. Our goal is to design, develop, implement, and analyze an online system that is available at any time to provide focused guidance to help students acquire the knowledge and skills necessary to solve the problem.
 
-\section{Overview of Electricity and Optics at Purdue}
+\section{Overview of Electricity and Optics}
 
 This study will take place in PHYS 24100 and PHYS 24100D - the introductory electromagnetism courses for \index{engineering}engineering majors at Purdue University (with the exception of the electrical engineering majors who take PHYS 27200). Both PHYS 24100 and PHYS 24100D are titled ``Electricity and Optics'', where the ``D'' signifies a \index{distance learning}distance learning course (i.e. an online course). The content in these two classes is exactly the same; they only differ in the fact that the \index{distance learning}distance learning sections watch video lectures and attend live online recitations through Cisco WebEx while the regular sections watch live lectures and attend live recitations on campus.
 
@@ -21,14 +21,14 @@ Figure \ref{fig:percent} shows the percent of the total class that is enrolled i
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter1/enrollment}
-	\caption[Enrollment in PHYS 24100 and PHYS 24100D from 2012-2015]{Enrollment in PHYS 24100 and PHYS 24100D from 2012-2015}
+	\caption{Enrollment in PHYS 24100 and PHYS 24100D between 2012 and 2015}
 	\label{fig:enrollment}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=5in]{img/chapter1/percent}
-	\caption[Percent of Students in PHYS 24100D from 2012-2014]{Percent of Students in PHYS 24100D from 2012-2014}
+	\caption[Percent of Students Enrolled in PHYS 24100D between 2012 and 2014]{Percent of Students Enrolled in PHYS 24100D between 2012 and 2014}
 	\label{fig:percent}
 \end{figure}
 
@@ -36,7 +36,7 @@ Figure \ref{fig:percent} shows the percent of the total class that is enrolled i
 
 \subsection{The CHIP System}
 
-PHYS 24100 and PHYS 24100D use an in-house homework system called \gls{chip}. The \gls{chip} system is based on the CPlite homework system from the \gls{uiuc}. Purdue University adopted an early version of CPlite in 1997 and continued to make improvements to it over the next decade, adding statistical analysis tools, gradebooks, and updated homework problems. \gls{chip} services not only the introductory physics courses but also many of the other physics courses at Purdue University\cite{saxena1998}.
+PHYS 24100 and PHYS 24100D use an in-house homework system called \gls{chip}. The \gls{chip} system is based on the CPlite homework system from the \gls{uiuc}. Purdue University adopted an early version of CPlite in 1997 and continued to make improvements to it over the next decade, adding statistical analysis tools, grade books, and updated homework problems. \gls{chip} services not only the introductory physics courses but also many of the other physics courses at Purdue University\cite{saxena1998}.
 
 \subsection{Strengths of CHIP}
 
@@ -58,7 +58,7 @@ Although \gls{chip} has resources for creating tutorials within homework problem
 
 \section{Statement of Development}
 
-There is a pressing need for the development of \gls{cita} in the second semester of introductory physics at Purdue University. In addition to the weaknesses of \gls{chip} stated above, student comments in \gls{chip} problem reports and course evaluations support the need for an interactive tutorial system. Many students comment that the content in the course seems disconnected; they think that they are covering radom topics with little connection, rather than a few key laws that define electromagnetism. One student commented on how he or she does not see the connection between the equations that are used in introductory electromagnetism.
+There is a pressing need for the development of \gls{cita} in the second semester of introductory physics at Purdue University. In addition to the weaknesses of \gls{chip} stated above, student comments in \gls{chip} problem reports and course evaluations support the need for an interactive tutorial system. Many students comment that the content in the course seems disconnected; they think that they are covering random topics with little connection, rather than a few key laws that define electromagnetism. One student commented on how he or she does not see the connection between the equations that are used in introductory electromagnetism.
 
 \begin{quote}
 The course goes over a bunch of equations but concepts are not really taught. It is hard to understand the material, I feel as if we are just given equations to memorize without understanding what goes on in the problems we deal with.
@@ -69,7 +69,7 @@ The course goes over a bunch of equations but concepts are not really taught. It
 Another student commented on the amount of material included in the textbook. He or she had trouble finding a place to focus.
 
 \begin{quote}
-I think the text book has too much unnecessary stuff, I sometimes dont really know which part to focus on, it could be helpful if they told us where to focus on.
+I think the text book has too much unnecessary stuff, I sometimes don[']t really know which part to focus on, it could be helpful if they told us where to focus on.
 
 - Anonymous Student, End of the Semester Evaluation from Summer 2014
 \end{quote}
